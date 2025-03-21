@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Gruppo&family=Caveat&display=swap"
+      rel="stylesheet"
+    />
+    <title>SPELFORUM || Merch</title>
+    <style>
+      body {
+        background-color: #8da8c2;
+        font-family: "Montserrat", sans-serif;
+      }
+      nav a.active {
+        background-color: #446584;
+        color: white;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <header>
+    <div class="bg-black">
+      <div
+        class="flex justify-between h-auto md:h-[440px] bg-[url('/public/assets/banner1.png')] bg-no-repeat bg-center bg-contain"
+      >
+        <!-- Hide image on mobile, show on md+ screens -->
+        <div class="">
+          <img src="/public/assets/player3.png" alt="Player3" class="h-full" />
+        </div>
+        <!-- Hide image on mobile, show on md+ screens -->
+        <div class="hidden md:block">
+          <img src="/public/assets/player4.png" class="h-full" alt="Player 1" />
+        </div>
+      </div>
+
+      <!-- Navigation section -->
+      <nav class="flex justify-between items-center">
+        <!-- Logo section -->
+        <div>
+          <img src="/public/assets/spelforum.jpg" alt="spelforum" />
+        </div>
+
+        <!-- Desktop menu -->
+        <div class="hidden md:block">
+          <ul
+            class="text-white flex font-bold justify-between text-4xl items-center gap-8"
+          >
+            <li><a href="Hem.html" class="hover:bg-[#446584] p-2">Hem</a></li>
+            <li>
+              <a href="Merch.html" class="hover:bg-[#446584] p-2">Merch</a>
+            </li>
+            <li>
+              <a href="Forum.html" class="hover:bg-[#446584] p-2">Forum</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Mobile menu and hamburger -->
+        <div class="md:hidden flex items-center gap-4">
+          <button id="hamburger-icon" class="text-white text-3xl">☰</button>
+        </div>
+        <!-- Search Form (hidden on mobile) -->
+        <div class="mr-5 hidden lg:block">
+          <form
+            action="https://kaggteknik.se/forms/slutupform.php"
+            method="POST"
+          >
+            <input
+              type="text"
+              required
+              placeholder="sok..."
+              class="p-2 bg-white"
+            />
+            <button class="bg-white p-2">sok</button>
+          </form>
+        </div>
+        <!-- Search Form (hidden on mobile) -->
+      </nav>
+
+      <!-- Mobile menu content (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden bg-black text-white">
+        <ul class="text-white flex flex-col text-4xl items-center gap-4 p-4">
+          <li><a href="Hem.html" class="hover:bg-[#446584] p-2">Hem</a></li>
+          <li>
+            <a href="Merch.html" class="hover:bg-[#446584] p-2">Merch</a>
+          </li>
+          <li>
+            <a href="Forum.html" class="hover:bg-[#446584] p-2">Forum</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="flex flex-wrap bg-gray-200 p-4 space-x-6 justify-between z-50 relative px-16"
+    >
+      <div class="dropdown dropdown-hover">
+        <button tabindex="0" class="btn m-1">Kläder</button>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm"
+        >
+          <li><a>Tröjor</a></li>
+          <li><a>T-shirt</a></li>
+          <li><a>Skjortor</a></li>
+          <li><a>Jackor</a></li>
+          <li><a>Kappor</a></li>
+          <li><a>Strumpor</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-hover">
+        <button tabindex="0" class="btn m-1">Väskor</button>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm"
+        >
+          <li><a>Ryggsäckar</a></li>
+          <li><a>Handväskor</a></li>
+          <li><a>Resväskor</a></li>
+          <li><a>Necessärer</a></li>
+          <li><a>Shoppingväskor</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-hover">
+        <button tabindex="0" class="btn m-1">Skor</button>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm"
+        >
+          <li><a>Boots</a></li>
+          <li><a>Pumps</a></li>
+          <li><a>Tofflor</a></li>
+          <li><a>Sneakers</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-hover">
+        <button tabindex="0" class="btn m-1">Film & TV</button>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm"
+        >
+          <li><a>Funko Pop!</a></li>
+          <li><a>Böcker</a></li>
+          <li><a>Posters</a></li>
+          <li><a>Filmer</a></li>
+          <li><a>Tv-serier</a></li>
+          <li><a>Muggar</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-hover">
+        <button tabindex="0" class="btn m-1">Accessoarer</button>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box w-52 p-2 shadow-sm"
+        >
+          <li><a>Mössor</a></li>
+          <li><a>Kepsar</a></li>
+          <li><a>Handskar</a></li>
+          <li><a>Väskor</a></li>
+          <li><a>Solglasögon</a></li>
+          <li><a>Musmatta</a></li>
+          <li><a>Nyckelringar</a></li>
+          <li><a>Plånbok</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <hr />
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full p-4">
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img class="w-full" src="/public/assets/marv_01.jpg" alt="Deadpool" />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Deadpool</h2>
+          <p>Deadpool - BANGI</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img
+            class="w-full"
+            src="/public/assets/marv_02.jpg"
+            alt="Doctor Strange"
+          />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Doctor Strange</h2>
+          <p>Doctor Strange - Portal</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full p-4 text-center"
+    >
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img
+            class="w-full"
+            src="/public/assets/marv_03.jpg"
+            alt="Guardians of the Galaxy"
+          />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Guardians of the Galaxy</h2>
+          <p>Guardians Of The Galaxy Vol. 2 - One Sheet</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img class="w-full" src="/public/assets/marv_04.jpg" alt="Avengers" />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Avengers</h2>
+          <p>Avengers Endgame - Line Up</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img
+            class="w-full"
+            src="/public/assets/marv_05.jpg"
+            alt="Black Widow"
+          />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Black Widow</h2>
+          <p>Black Widow - Unfinished Business</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img class="w-full" src="/public/assets/marv_06.jpg" alt="Loki" />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Loki</h2>
+          <p>Loki - Glorious Purpose</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img
+            class="w-full"
+            src="/public/assets/marv_07.jpg"
+            alt="Captain America"
+          />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Captain America</h2>
+          <p>Marvel - Captain America</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-2xl p-4">
+        <figure class="flex justify-center">
+          <img class="w-full" src="/public/assets/marv_08.jpg" alt="Iron Man" />
+        </figure>
+        <div class="card-body flex flex-col items-center text-center">
+          <h2 class="card-title">Iron Man</h2>
+          <p>Avengers Endgame - I Am Iron Man</p>
+          <div class="card-actions">
+            <button class="btn btn-primary bg-[#3ecd32] p-2 mt-3">Kop</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+    <footer class="bg-white w-full p-4 mt-2">
+      <div
+        class="flex flex-col text-center items-center space-x-2 md:flex-row justify-between w-full font-bold text-3xl"
+      >
+        <p class="text-sm md:text-base">© Spelforum.se 1900-2022</p>
+        <p class="text-sm md:text-base">Kontakta oss: info@spelforum.se</p>
+        <p class="text-sm md:text-base">Info om webbidan</p>
+      </div>
+    </footer>
+    <script>
+      const hamburgerIcon = document.getElementById("hamburger-icon");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      hamburgerIcon.addEventListener("click", () => {
+        // Toggle mobile menu visibility
+        mobileMenu.classList.toggle("hidden");
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get the current path of the URL
+        const currentPath = window.location.pathname.split("/").pop();
+
+        // Select all navigation links
+        const links = document.querySelectorAll("nav a");
+
+        // Loop through all links and check if the href matches the current path
+        links.forEach((link) => {
+          // Get the href from the link, and remove the leading slash if present
+          const linkPath = link.getAttribute("href").split("/").pop();
+
+          // Check if the href matches the current URL path
+          if (linkPath === currentPath) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
