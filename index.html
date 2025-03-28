@@ -22,42 +22,73 @@
     </style>
   </head>
   <body>
-    <!-- Set a fixed height for the iframe or let it adjust dynamically -->
-    <header>
-      <div class="bg-black">
-        <div
-          class="flex justify-between h-auto md:h-[440px] bg-[url('/public/assets/banner1.png')] bg-no-repeat bg-center bg-contain"
-        >
-          <!-- Hide image on mobile, show on md+ screens -->
-          <div class="">
-            <img
-              src="/public/assets/player3.png"
-              alt="Player3"
-              class="h-full"
-            />
+  <div class="container mx-auto">
+      <!-- Set a fixed height for the iframe or let it adjust dynamically -->
+      <header>
+        <div class="bg-black">
+          <div
+            class="flex justify-between h-auto md:h-[440px] bg-[url('/public/assets/banner1.png')] bg-no-repeat bg-center bg-contain"
+          >
+            <!-- Hide image on mobile, show on md+ screens -->
+            <div class="">
+              <img
+                src="/public/assets/player3.png"
+                alt="Player3"
+                class="h-full"
+              />
+            </div>
+            <!-- Hide image on mobile, show on md+ screens -->
+            <div class="hidden md:block">
+              <img
+                src="/public/assets/player4.png"
+                class="h-full"
+                alt="Player 1"
+              />
+            </div>
           </div>
-          <!-- Hide image on mobile, show on md+ screens -->
-          <div class="hidden md:block">
-            <img
-              src="/public/assets/player4.png"
-              class="h-full"
-              alt="Player 1"
-            />
-          </div>
-        </div>
-
-        <!-- Navigation section -->
-        <nav class="flex justify-between items-center">
-          <!-- Logo section -->
-          <div>
-            <img src="/public/assets/spelforum.jpg" alt="spelforum" />
-          </div>
-
-          <!-- Desktop menu -->
-          <div class="hidden md:block">
-            <ul
-              class="text-white flex font-bold justify-between text-4xl items-center gap-3 lg:gap-8"
-            >
+  
+          <!-- Navigation section -->
+          <nav class="flex justify-between items-center">
+            <!-- Logo section -->
+            <div>
+              <img src="/public/assets/spelforum.jpg" alt="spelforum" />
+            </div>
+  
+            <!-- Desktop menu -->
+            <div class="hidden md:block">
+              <ul
+                class="text-white flex font-bold justify-between text-4xl items-center gap-3 lg:gap-8"
+              >
+                <li><a href="index.html" class="hover:bg-[#446584] p-2">Hem</a></li>
+                <li>
+                  <a href="Merch.html" class="hover:bg-[#446584] p-2">Merch</a>
+                </li>
+                <li>
+                  <a href="Forum.html" class="hover:bg-[#446584] p-2">Forum</a>
+                </li>
+              </ul>
+            </div>
+  
+            <!-- Mobile menu and hamburger -->
+            <div class="md:hidden flex items-center gap-4">
+              <button id="hamburger-icon" class="text-white text-3xl">☰</button>
+            </div>
+            <!-- Search Form (hidden on mobile) -->
+            <div class="mr-5 hidden lg:block">
+              <form
+                action="https://kaggteknik.se/forms/slutupform.php"
+                method="POST"
+              >
+                <input type="text" required placeholder="sok..." class="p-2" />
+                <button class="bg-white p-2">sok</button>
+              </form>
+            </div>
+            <!-- Search Form (hidden on mobile) -->
+          </nav>
+  
+          <!-- Mobile menu content (hidden by default) -->
+          <div id="mobile-menu" class="hidden md:hidden bg-black text-white">
+            <ul class="text-white flex flex-col text-4xl items-center gap-4 p-4">
               <li><a href="index.html" class="hover:bg-[#446584] p-2">Hem</a></li>
               <li>
                 <a href="Merch.html" class="hover:bg-[#446584] p-2">Merch</a>
@@ -67,212 +98,183 @@
               </li>
             </ul>
           </div>
-
-          <!-- Mobile menu and hamburger -->
-          <div class="md:hidden flex items-center gap-4">
-            <button id="hamburger-icon" class="text-white text-3xl">☰</button>
-          </div>
-          <!-- Search Form (hidden on mobile) -->
-          <div class="mr-5 hidden lg:block">
+        </div>
+      </header>
+      <section class="flex flex-col lg:flex-row gap-2">
+        <!-- Stack content vertically on small screens and horizontally on larger screens -->
+        <!-- Image Section (takes 2/3 of the width) -->
+        <div class="w-full lg:w-2/3">
+          <!-- Takes full width on small screens, 2/3 on medium and larger screens -->
+          <img
+            class="w-full h-full"
+            src="/public/assets/ps6.png"
+            alt="PS6 Image"
+          />
+        </div>
+  
+        <!-- Form and Threads Section (takes 1/3 of the width) -->
+        <div class="w-full lg:w-1/3">
+          <!-- Takes full width on small screens, 1/3 on medium and larger screens -->
+          <div class="flex flex-col space-y-4">
+            <!-- Flex column with spacing between elements -->
             <form
               action="https://kaggteknik.se/forms/slutupform.php"
               method="POST"
             >
-              <input type="text" required placeholder="sok..." class="p-2" />
-              <button class="bg-white p-2">sok</button>
+              <!-- Form Section -->
+              <div class="bg-gray-200 p-4">
+                <!-- Use flexbox to make input and button on the same line in mobile -->
+                <div class="flex flex-col sm:flex-row sm:space-x-2 gap-2">
+                  <input
+                    type="text"
+                    placeholder="Användare"
+                    required
+                    class="p-2 border rounded w-full sm:w-3/4"
+                  />
+                  <button class="bg-blue-500 text-white p-2 rounded sm:w-1/4">
+                    Bli medlem
+                  </button>
+                </div>
+                <br />
+                <!-- Use flexbox to make input and button on the same line in mobile -->
+                <div class="flex flex-col sm:flex-row sm:space-x-2 gap-2">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                    class="p-2 border rounded w-full sm:w-3/4"
+                  />
+                  <button class="bg-blue-500 text-white p-2 rounded sm:w-1/4">
+                    Logga in
+                  </button>
+                </div>
+              </div>
             </form>
-          </div>
-          <!-- Search Form (hidden on mobile) -->
-        </nav>
-
-        <!-- Mobile menu content (hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black text-white">
-          <ul class="text-white flex flex-col text-4xl items-center gap-4 p-4">
-            <li><a href="index.html" class="hover:bg-[#446584] p-2">Hem</a></li>
-            <li>
-              <a href="Merch.html" class="hover:bg-[#446584] p-2">Merch</a>
-            </li>
-            <li>
-              <a href="Forum.html" class="hover:bg-[#446584] p-2">Forum</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="flex flex-col lg:flex-row gap-2">
-      <!-- Stack content vertically on small screens and horizontally on larger screens -->
-      <!-- Image Section (takes 2/3 of the width) -->
-      <div class="w-full lg:w-2/3">
-        <!-- Takes full width on small screens, 2/3 on medium and larger screens -->
-        <img
-          class="w-full h-full"
-          src="/public/assets/ps6.png"
-          alt="PS6 Image"
-        />
-      </div>
-
-      <!-- Form and Threads Section (takes 1/3 of the width) -->
-      <div class="w-full lg:w-1/3">
-        <!-- Takes full width on small screens, 1/3 on medium and larger screens -->
-        <div class="flex flex-col space-y-4">
-          <!-- Flex column with spacing between elements -->
-          <form
-            action="https://kaggteknik.se/forms/slutupform.php"
-            method="POST"
-          >
-            <!-- Form Section -->
-            <div class="bg-gray-200 p-4">
-              <!-- Use flexbox to make input and button on the same line in mobile -->
-              <div class="flex flex-col sm:flex-row sm:space-x-2 gap-2">
-                <input
-                  type="text"
-                  placeholder="Användare"
-                  required
-                  class="p-2 border rounded w-full sm:w-3/4"
-                />
-                <button class="bg-blue-500 text-white p-2 rounded sm:w-1/4">
-                  Bli medlem
-                </button>
-              </div>
-              <br />
-              <!-- Use flexbox to make input and button on the same line in mobile -->
-              <div class="flex flex-col sm:flex-row sm:space-x-2 gap-2">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  required
-                  class="p-2 border rounded w-full sm:w-3/4"
-                />
-                <button class="bg-blue-500 text-white p-2 rounded sm:w-1/4">
-                  Logga in
-                </button>
-              </div>
+  
+            <!-- Latest Threads Section -->
+            <div class="text-center">
+              <h3 class="bg-black text-white p-2 text-3xl">Senaste trådar</h3>
+              <p class="bg-blue-200 font-bold p-2">
+                Hur långt har ni kommit i pacman?
+              </p>
+              <p class="font-bold p-2">Kan någon hjälpa mig med Monkey...</p>
+              <p class="bg-blue-200 font-bold p-2">
+                Vilket är det senaste spel ni köpt?
+              </p>
+              <p class="font-bold p-2">Pyttemjukis nya handkontroll känns...</p>
+              <p class="bg-blue-200 font-bold p-2">
+                Någon som vill lira Speedball med...
+              </p>
+              <p class="font-bold p-2">Hur får man oändligt med cash i sim...</p>
+              <p class="bg-blue-200 font-bold p-2">
+                Jag tror på tomten. Är jag blåst?
+              </p>
             </div>
-          </form>
-
-          <!-- Latest Threads Section -->
-          <div class="text-center">
-            <h3 class="bg-black text-white p-2 text-3xl">Senaste trådar</h3>
-            <p class="bg-blue-200 font-bold p-2">
-              Hur långt har ni kommit i pacman?
+          </div>
+        </div>
+      </section>
+  
+      <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
+        <!-- Nyheter Section -->
+        <div class="bg-white shadow-md overflow-hidden border">
+          <h2 class="bg-black text-white text-center text-lg font-bold py-2">
+            Nyheter
+          </h2>
+          <div class="p-4">
+            <img
+              src="/public/assets/mario.png"
+              alt="Mario"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">
+              Nytt Mario på väg från Nintendo
+            </h3>
+            <p class="text-gray-600 text-sm mt-1">
+              Nintendo låter meddela att man tänker släppa ett nytt super mario
+              till konsolen Wii U2 3DS XXL...
             </p>
-            <p class="font-bold p-2">Kan någon hjälpa mig med Monkey...</p>
-            <p class="bg-blue-200 font-bold p-2">
-              Vilket är det senaste spel ni köpt?
-            </p>
-            <p class="font-bold p-2">Pyttemjukis nya handkontroll känns...</p>
-            <p class="bg-blue-200 font-bold p-2">
-              Någon som vill lira Speedball med...
-            </p>
-            <p class="font-bold p-2">Hur får man oändligt med cash i sim...</p>
-            <p class="bg-blue-200 font-bold p-2">
-              Jag tror på tomten. Är jag blåst?
+          </div>
+          <div class="p-4 border-t">
+            <img
+              src="/public/assets/gta_300x130.png"
+              alt="GTA VII"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">Ny trailer för GTA VII ute</h3>
+            <p class="text-gray-600 text-sm mt-1">
+              Rockstars efterlängtade uppföljare ser sjukt realistiskt ut...
             </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-2">
-      <!-- Nyheter Section -->
-      <div class="bg-white shadow-md overflow-hidden border">
-        <h2 class="bg-black text-white text-center text-lg font-bold py-2">
-          Nyheter
-        </h2>
-        <div class="p-4">
-          <img
-            src="/public/assets/mario.png"
-            alt="Mario"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">
-            Nytt Mario på väg från Nintendo
-          </h3>
-          <p class="text-gray-600 text-sm mt-1">
-            Nintendo låter meddela att man tänker släppa ett nytt super mario
-            till konsolen Wii U2 3DS XXL...
-          </p>
+  
+        <!-- Recensioner Section -->
+        <div class="bg-white shadow-md overflow-hidden border">
+          <h2 class="bg-black text-white text-center text-lg font-bold py-2">
+            Recensioner
+          </h2>
+          <div class="p-4">
+            <img
+              src="/public/assets/halo_300x130.png"
+              alt="Halo"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">Vi har spelat senaste Halo!!</h3>
+            <p class="text-gray-600 text-sm mt-1">
+              Anders har suttit i två veckor och spelat igenom det senaste
+              äventyret...
+            </p>
+          </div>
+          <div class="p-4 border-t">
+            <img
+              src="/public/assets/tubahero_300x130.png"
+              alt="Tuba Hero"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">Läs vad vi tycker om Tuba Hero</h3>
+            <p class="text-gray-600 text-sm mt-1">
+              Plastinstrumentens tid är inte förbi...
+            </p>
+          </div>
         </div>
-        <div class="p-4 border-t">
-          <img
-            src="/public/assets/gta_300x130.png"
-            alt="GTA VII"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">Ny trailer för GTA VII ute</h3>
-          <p class="text-gray-600 text-sm mt-1">
-            Rockstars efterlängtade uppföljare ser sjukt realistiskt ut...
-          </p>
+  
+        <!-- Hårdvara Section -->
+        <div class="bg-white shadow-md overflow-hidden border">
+          <h2 class="bg-black text-white text-center text-lg font-bold py-2">
+            Hårdvara
+          </h2>
+          <div class="p-4">
+            <img
+              src="/public/assets/vrhelmet_272x158.png"
+              alt="VR-hjälm"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">VR-hjälmen Head8 från SONY</h3>
+            <p class="text-gray-600 text-sm mt-1">En ny revolution inom VR...</p>
+          </div>
+          <div class="p-4 border-t">
+            <img
+              src="/public/assets/powerglove_272x158.png"
+              alt="Powerglove"
+              class="w-full h-[200px] rounded-md"
+            />
+            <h3 class="text-lg font-bold mt-2">Powerglove för Nintendo Wii U2</h3>
+            <p class="text-gray-600 text-sm mt-1">
+              Nintendo tar tillbaka klassikern i en ny version...
+            </p>
+          </div>
         </div>
-      </div>
-
-      <!-- Recensioner Section -->
-      <div class="bg-white shadow-md overflow-hidden border">
-        <h2 class="bg-black text-white text-center text-lg font-bold py-2">
-          Recensioner
-        </h2>
-        <div class="p-4">
-          <img
-            src="/public/assets/halo_300x130.png"
-            alt="Halo"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">Vi har spelat senaste Halo!!</h3>
-          <p class="text-gray-600 text-sm mt-1">
-            Anders har suttit i två veckor och spelat igenom det senaste
-            äventyret...
-          </p>
+      </section>
+  
+      <footer class="bg-white w-full p-4 mt-2">
+        <div
+          class="flex flex-col text-center items-center space-x-2 md:flex-row justify-between w-full font-bold text-3xl"
+        >
+          <p class="text-sm md:text-base">© Spelforum.se 1900-2022</p>
+          <p class="text-sm md:text-base">Kontakta oss: info@spelforum.se</p>
+          <p class="text-sm md:text-base">Info om webbidan</p>
         </div>
-        <div class="p-4 border-t">
-          <img
-            src="/public/assets/tubahero_300x130.png"
-            alt="Tuba Hero"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">Läs vad vi tycker om Tuba Hero</h3>
-          <p class="text-gray-600 text-sm mt-1">
-            Plastinstrumentens tid är inte förbi...
-          </p>
-        </div>
-      </div>
-
-      <!-- Hårdvara Section -->
-      <div class="bg-white shadow-md overflow-hidden border">
-        <h2 class="bg-black text-white text-center text-lg font-bold py-2">
-          Hårdvara
-        </h2>
-        <div class="p-4">
-          <img
-            src="/public/assets/vrhelmet_272x158.png"
-            alt="VR-hjälm"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">VR-hjälmen Head8 från SONY</h3>
-          <p class="text-gray-600 text-sm mt-1">En ny revolution inom VR...</p>
-        </div>
-        <div class="p-4 border-t">
-          <img
-            src="/public/assets/powerglove_272x158.png"
-            alt="Powerglove"
-            class="w-full h-[200px] rounded-md"
-          />
-          <h3 class="text-lg font-bold mt-2">Powerglove för Nintendo Wii U2</h3>
-          <p class="text-gray-600 text-sm mt-1">
-            Nintendo tar tillbaka klassikern i en ny version...
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-white w-full p-4 mt-2">
-      <div
-        class="flex flex-col text-center items-center space-x-2 md:flex-row justify-between w-full font-bold text-3xl"
-      >
-        <p class="text-sm md:text-base">© Spelforum.se 1900-2022</p>
-        <p class="text-sm md:text-base">Kontakta oss: info@spelforum.se</p>
-        <p class="text-sm md:text-base">Info om webbidan</p>
-      </div>
-    </footer>
+      </footer>
+  </div>
     <script>
       const hamburgerIcon = document.getElementById("hamburger-icon");
       const mobileMenu = document.getElementById("mobile-menu");
